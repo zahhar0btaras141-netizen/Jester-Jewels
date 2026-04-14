@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jester Jewels - Support</title>
+    <style>
+        /* Shared Styles */
+        :root { --bg-color: #160f24; --text-color: #f0e6ff; --accent-color: #ffd700; --card-bg: rgba(255, 255, 255, 0.05); }
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, var(--bg-color) 0%, #2a1b42 100%); color: var(--text-color); min-height: 100vh; display: flex; flex-direction: column; text-align: center; }
+        nav { background: rgba(0, 0, 0, 0.3); padding: 15px 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; backdrop-filter: blur(10px); }
+        nav a { color: var(--text-color); text-decoration: none; font-weight: 600; font-size: 1rem; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: var(--accent-color); }
+        .container { max-width: 600px; margin: 40px auto; padding: 20px; flex: 1; animation: fadeIn 0.8s ease-out; }
+        h1 { color: var(--accent-color); text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); font-size: 2.5rem; }
+        .card { background: var(--card-bg); border-radius: 15px; padding: 40px 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 215, 0, 0.1); }
+        .email-link { display: inline-block; margin-top: 20px; padding: 15px 30px; background: var(--accent-color); color: #160f24; text-decoration: none; font-weight: bold; border-radius: 25px; transition: transform 0.2s, box-shadow 0.2s; }
+        .email-link:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        footer { text-align: center; padding: 20px; font-size: 0.9rem; opacity: 0.7; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="support.html" class="active">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </nav>
+    <div class="container">
+        <h1>Need Help?</h1>
+        <div class="card">
+            <p>If you encounter any bugs, have feature requests, or simply want to ask a question about <strong>Jester Jewels</strong>, I am here to help!</p>
+            <p>As an indie developer, your feedback is incredibly valuable to me.</p>
+            <a href="mailto:zahhar0btaras141@gmail.com" class="email-link">Email Support</a>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">zahhar0btaras141@gmail.com</p>
+        </div>
+    </div>
+    <footer>&copy; 2026 Taras Shtefko. All rights reserved.</footer>
+</body>
+</html>
