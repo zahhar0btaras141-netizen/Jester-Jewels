@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jester Jewels - Official App Page</title>
+    <style>
+        :root {
+            --bg-color: #160f24;
+            --text-color: #f0e6ff;
+            --accent-color: #ffd700;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #2a1b42 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 20px;
+            display: flex; justify-content: center; gap: 20px;
+            flex-wrap: wrap; backdrop-filter: blur(10px);
+        }
+        nav a {
+            color: var(--text-color); text-decoration: none;
+            font-weight: 600; font-size: 1rem; transition: color 0.3s;
+        }
+        nav a:hover, nav a.active { color: var(--accent-color); }
+        .container {
+            max-width: 800px; margin: 40px auto; padding: 20px;
+            flex: 1; animation: fadeIn 0.8s ease-out;
+        }
+        h1 {
+            color: var(--accent-color); text-align: center;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            font-size: 2.5rem;
+        }
+        .card {
+            background: var(--card-bg); border-radius: 15px; padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .dev-info { margin-top: 20px; line-height: 1.6; }
+        .highlight { color: var(--accent-color); font-weight: bold; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        footer { text-align: center; padding: 20px; font-size: 0.9rem; opacity: 0.7; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </nav>
+    <div class="container">
+        <h1>Jester Jewels</h1>
+        <div class="card">
+            <h2>Welcome to Jester Jewels</h2>
+            <p>Experience the ultimate puzzle and entertainment adventure. Jester Jewels is crafted with passion to bring joy and value to your daily routine.</p>
+            <div class="dev-info">
+                <h3>Developer Information</h3>
+                <p><span class="highlight">Developer:</span> Taras Shtefko</p>
+                <p><span class="highlight">Contact Account:</span> zahhar0btaras141@gmail.com</p>
+                <p>Welcome to my official developer page. I am dedicated to creating clean, engaging, and valuable applications for the community.</p>
+            </div>
+        </div>
+    </div>
+    <footer>&copy; 2026 Taras Shtefko. All rights reserved.</footer>
+</body>
+</html>
