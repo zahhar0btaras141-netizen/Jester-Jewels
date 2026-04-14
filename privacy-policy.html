@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jester Jewels - Privacy Policy</title>
+    <style>
+        /* Shared Styles */
+        :root { --bg-color: #160f24; --text-color: #f0e6ff; --accent-color: #ffd700; --card-bg: rgba(255, 255, 255, 0.05); }
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, var(--bg-color) 0%, #2a1b42 100%); color: var(--text-color); min-height: 100vh; display: flex; flex-direction: column; }
+        nav { background: rgba(0, 0, 0, 0.3); padding: 15px 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; backdrop-filter: blur(10px); }
+        nav a { color: var(--text-color); text-decoration: none; font-weight: 600; font-size: 1rem; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: var(--accent-color); }
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; flex: 1; animation: fadeIn 0.8s ease-out; }
+        h1 { color: var(--accent-color); text-align: center; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); font-size: 2.5rem; }
+        .card { background: var(--card-bg); border-radius: 15px; padding: 30px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 215, 0, 0.1); line-height: 1.6; }
+        .policy-alert { background: rgba(255, 215, 0, 0.1); border: 2px dashed var(--accent-color); padding: 20px; border-radius: 10px; text-align: center; margin: 20px 0; font-size: 1.2rem; }
+        
+        /* Native Close Button Style */
+        .close-btn { 
+            display: block; width: 100%; max-width: 300px; margin: 30px auto 10px; padding: 15px;
+            background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color);
+            border-radius: 30px; font-size: 1.1rem; font-weight: bold; cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .close-btn:hover, .close-btn:active { background: var(--accent-color); color: #160f24; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        footer { text-align: center; padding: 20px; font-size: 0.9rem; opacity: 0.7; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html" class="active">Privacy Policy</a>
+    </nav>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <div class="card">
+            <p><strong>Effective Date:</strong> Today</p>
+            <p>At <strong>Jester Jewels</strong>, developed by Taras Shtefko, we believe your data is your own.</p>
+            
+            <div class="policy-alert">
+                <strong>Zero Data Collection Policy</strong><br>
+                We do NOT collect, do NOT store, and do NOT share any of your personal data. 
+            </div>
+
+            <p><strong>1. Information Collection</strong><br>
+            The Jester Jewels application operates entirely on your local device. We do not integrate any third-party SDKs that track you, nor do we require you to create an account.</p>
+
+            <p><strong>2. Information Usage & Sharing</strong><br>
+            Since we collect absolutely no data, there is nothing to use, nothing to store on servers, and nothing to share with third parties.</p>
+
+            <p><strong>3. Contact Us</strong><br>
+            If you have any questions about this Privacy Policy, please contact us at: <strong>zahhar0btaras141@gmail.com</strong></p>
+
+            <button class="close-btn" onclick="closeAppWebView()">Close Privacy Policy</button>
+        </div>
+    </div>
+    <footer>&copy; 2026 Taras Shtefko. All rights reserved.</footer>
+
+    <script>
+        function closeAppWebView() {
+            // Send a message to the native iOS app to close the webview
+            // In Swift, you must register a handler named "closeAppWebView"
+            // e.g., contentController.add(self, name: "closeAppWebView")
+            try {
+                if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.closeAppWebView) {
+                    window.webkit.messageHandlers.closeAppWebView.postMessage("close");
+                } else {
+                    // Fallback for regular browsers
+                    console.log("WebKit Message Handler not found. This button works inside the iOS App WebView.");
+                    alert("This button is designed to close the screen inside the Jester Jewels app.");
+                }
+            } catch(err) {
+                console.error("Error trying to close WebView: ", err);
+            }
+        }
+    </script>
+</body>
+</html>
