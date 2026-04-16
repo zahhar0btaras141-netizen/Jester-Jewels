@@ -2,54 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jester Jewels - Official App Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Jester Jewels | Official Page</title>
     <style>
         :root {
-            --bg-color: #160f24;
-            --text-color: #f0e6ff;
-            --accent-color: #ffd700;
-            --card-bg: rgba(255, 255, 255, 0.05);
+            --bg: #0f0a1e;
+            --card: rgba(255, 255, 255, 0.05);
+            --accent: #ffd700;
+            --text: #f0f0f5;
+            --safe-top: env(safe-area-inset-top);
         }
         body {
-            margin: 0; padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, var(--bg-color) 0%, #2a1b42 100%);
-            color: var(--text-color);
+            margin: 0; font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg); color: var(--text);
+            background-image: radial-gradient(circle at top right, #251a4a, #0f0a1e);
             min-height: 100vh;
-            display: flex; flex-direction: column;
         }
         nav {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 15px 20px;
-            display: flex; justify-content: center; gap: 20px;
-            flex-wrap: wrap; backdrop-filter: blur(10px);
+            padding-top: max(20px, var(--safe-top));
+            padding-bottom: 15px;
+            display: flex; justify-content: center; gap: 10px;
+            background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 1000;
         }
         nav a {
-            color: var(--text-color); text-decoration: none;
-            font-weight: 600; font-size: 1rem; transition: color 0.3s;
+            color: var(--text); text-decoration: none; font-size: 0.9rem;
+            padding: 8px 16px; border-radius: 20px; transition: 0.3s;
+            border: 1px solid rgba(255,215,0,0.2);
         }
-        nav a:hover, nav a.active { color: var(--accent-color); }
-        .container {
-            max-width: 800px; margin: 40px auto; padding: 20px;
-            flex: 1; animation: fadeIn 0.8s ease-out;
-        }
-        h1 {
-            color: var(--accent-color); text-align: center;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-            font-size: 2.5rem;
-        }
+        nav a:hover, nav a.active { background: var(--accent); color: #000; font-weight: bold; }
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        h1 { font-size: 2.8rem; color: var(--accent); text-shadow: 0 0 20px rgba(255,215,0,0.3); margin: 10px 0; }
         .card {
-            background: var(--card-bg); border-radius: 15px; padding: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            transition: transform 0.3s;
+            background: var(--card); border: 1px solid rgba(255,255,255,0.1);
+            padding: 30px; border-radius: 24px; backdrop-filter: blur(12px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
-        .card:hover { transform: translateY(-5px); }
-        .dev-info { margin-top: 20px; line-height: 1.6; }
-        .highlight { color: var(--accent-color); font-weight: bold; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        footer { text-align: center; padding: 20px; font-size: 0.9rem; opacity: 0.7; }
+        .dev-info { margin-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); pt: 20px; }
+        .badge { display: inline-block; padding: 4px 12px; background: var(--accent); color: #000; border-radius: 12px; font-weight: bold; font-size: 0.8rem; }
+        footer { text-align: center; padding: 40px; opacity: 0.5; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -57,21 +49,24 @@
         <a href="index.html" class="active">Home</a>
         <a href="marketing.html">Marketing</a>
         <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html">Privacy</a>
     </nav>
     <div class="container">
-        <h1>Jester Jewels</h1>
+        <div class="hero">
+            <h1>Jester Jewels</h1>
+            <p>Sparkle, Strategy, and Royal Fun.</p>
+        </div>
         <div class="card">
-            <h2>Welcome to Jester Jewels</h2>
-            <p>Experience the ultimate puzzle and entertainment adventure. Jester Jewels is crafted with passion to bring joy and value to your daily routine.</p>
+            <h2>Welcome to the Kingdom</h2>
+            <p>Jester Jewels is a premium puzzle experience where every move shines. Crafted for players who seek quality and engagement.</p>
             <div class="dev-info">
-                <h3>Developer Information</h3>
-                <p><span class="highlight">Developer:</span> Taras Shtefko</p>
-                <p><span class="highlight">Contact Account:</span> zahhar0btaras141@gmail.com</p>
-                <p>Welcome to my official developer page. I am dedicated to creating clean, engaging, and valuable applications for the community.</p>
+                <span class="badge">Developer</span>
+                <h3>Taras Shtefko</h3>
+                <p>Dedicated to creating high-value mobile applications that bring joy and clear utility to users worldwide.</p>
+                <p><strong>Contact:</strong> zahhar0btaras141@gmail.com</p>
             </div>
         </div>
     </div>
-    <footer>&copy; 2026 Taras Shtefko. All rights reserved.</footer>
+    <footer>&copy; 2024 Taras Shtefko. All rights reserved.</footer>
 </body>
 </html>
