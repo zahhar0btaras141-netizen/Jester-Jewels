@@ -8,7 +8,7 @@
         *, *::before, *::after { box-sizing: border-box; }
         body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1e1b4b 0%, #311042 50%, #111827 100%); color: #f8fafc; min-height: 100vh; display: flex; justify-content: center; align-items: center; overflow-x: hidden; }
         .container { width: 100%; max-width: 650px; padding: 24px; margin: 20px auto; }
-        .glass-card { background: rgba(49, 16, 66, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(236, 72, 153, 0.2); border-radius: 24px; padding: 32px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 50px rgba(236, 72, 153, 0.15); text-align: center; position: relative; overflow: hidden; }
+        .glass-card { background: rgba(49, 16, 66, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(236, 72, 153, 0.25); border-radius: 24px; padding: 32px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 50px rgba(236, 72, 153, 0.15); text-align: center; position: relative; overflow: hidden; }
         .jester-gem { width: 70px; height: 70px; background: linear-gradient(135deg, #f472b6 0%, #db2777 100%); margin: 0 auto; border-radius: 18px; box-shadow: 0 0 30px rgba(236, 72, 153, 0.6); display: flex; justify-content: center; align-items: center; font-size: 32px; animation: float 4s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
         h1 { font-size: 28px; font-weight: 800; margin: 12px 0 4px 0; background: linear-gradient(135deg, #fff 30%, #fbcfe8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -32,7 +32,7 @@
         <div class="app-logo-area">
             <div class="jester-gem">💎</div>
             <h1>Jester Jewels</h1>
-            <div class="dev-badge">Privacy & Legal Policy</div>
+            <div class="dev-badge">Privacy & Data Disclosures</div>
         </div>
         <div class="nav-tabs">
             <a href="index.html" class="tab-link">Home / App</a>
@@ -42,22 +42,22 @@
         </div>
         <div class="page-content">
             <p class="page-title">Privacy Policy</p>
-            <p><strong>Effective Date: June 2, 2026</strong></p>
-            <p>This document establishes the structural disclosure paradigms regarding processing and attribution protocols integrated within <strong>Jester Jewels</strong>. We maintain structured workflows to handle device metadata strictly under verified policies.</p>
+            <p><strong>Effective Date: June 3, 2026</strong></p>
+            <p>This privacy policy details the data processing, instrumentation frameworks, and tracking architectures utilized inside the <strong>Jester Jewels</strong> mobile application ecosystem.</p>
             
             <div class="highlight-box">
-                <strong>Installation & Attribution Analytics:</strong> Jester Jewels integrates third-party software development kits, specifically <strong>AppsFlyer</strong>, to monitor, measure, and analyze marketing campaign efficiency, organic installation distributions, and aggregate operational metrics.
+                <strong>Installation & Campaign Attribution:</strong> We utilize the <strong>AppsFlyer SDK</strong> to measure marketing performance, attribute user installations to acquisition campaigns, and process aggregate application usage analytics to evaluate product stability.
             </div>
             
-            <p><strong>App Tracking Transparency (ATT):</strong> On compatible iOS deployment environments, the application requests operational clearance via the standard Apple ATT prompt. This permission authorizes token evaluations required exclusively to run structural analytics and campaign attribution workflows.</p>
+            <p><strong>App Tracking Transparency (ATT):</strong> On compatible iOS device environments, Jester Jewels triggers the native Apple App Tracking Transparency request layer. This operational permission enables technical token matching required exclusively for correct attribution pipelines managed via AppsFlyer.</p>
             
-            <p><strong>Sandbox Save Storage:</strong> All user game profiles, active milestones, high-scores, and progression tables are stored locally inside the device file sandbox structure. No remote databases maintain personal records of your progress.</p>
+            <p><strong>Local State Management:</strong> All user application progress, unbolted high-scores, local game state parameters, and performance configuration settings are retained exclusively on the local hardware filesystem sandbox and are not transferred to remote clouds.</p>
             
-            <p><strong>Secure Remote Interfaces:</strong> The application settings dashboard contains optional triggers that may programmatically initiate secure, containerized connections via protected **HTTPS WebView** protocols to reference documentation servers.</p>
+            <p><strong>HTTPS WebView Operations:</strong> The application settings dashboard contains operational nodes that may instantiate secure, sandboxed connections via standard encrypted **HTTPS WebView** protocols to verify terms, references, or dynamic configurations on secure web hosts.</p>
             
             <div class="btn-container">
                 <button class="primary-action-btn" onclick="closeNativeWebView()">
-                    Dismiss Policy View & Return
+                    Close and Return to App
                 </button>
             </div>
         </div>
@@ -67,7 +67,7 @@
                 if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.dismissWebView) {
                     window.webkit.messageHandlers.dismissWebView.postMessage({ "action": "close" });
                 } else {
-                    alert("Native callback triggered! (When executed inside the native WKWebView, this instructs the application controller to close the current container layer safely).");
+                    alert("Native callback triggered successfully! (When launched inside the iOS application wrapper, this triggers native closure).");
                 }
             }
         </script>
