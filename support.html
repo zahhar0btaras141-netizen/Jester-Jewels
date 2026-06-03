@@ -2,33 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Support | Jester Jewels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Support - Jester Jewels</title>
     <style>
-        :root { --bg: #0f0a1e; --card: rgba(255, 255, 255, 0.05); --accent: #ffd700; --text: #f0f0f5; --safe-top: env(safe-area-inset-top); }
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); text-align: center; }
-        nav { padding-top: max(20px, var(--safe-top)); padding-bottom: 15px; display: flex; justify-content: center; gap: 10px; background: rgba(0,0,0,0.3); backdrop-filter: blur(10px); position: sticky; top: 0; }
-        nav a { color: var(--text); text-decoration: none; font-size: 0.9rem; padding: 8px 16px; border-radius: 20px; border: 1px solid rgba(255,215,0,0.2); }
-        .container { max-width: 600px; margin: 80px auto; padding: 0 20px; }
-        .card { background: var(--card); padding: 50px 20px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.1); }
-        .contact-btn { display: inline-block; padding: 15px 40px; background: var(--accent); color: #000; text-decoration: none; border-radius: 30px; font-weight: bold; margin-top: 20px; transition: 0.3s; }
-        .contact-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,215,0,0.4); }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #1e1b4b 0%, #311042 50%, #111827 100%); color: #f8fafc; min-height: 100vh; display: flex; justify-content: center; align-items: center; overflow-x: hidden; }
+        .container { width: 100%; max-width: 650px; padding: 24px; margin: 20px auto; }
+        .glass-card { background: rgba(49, 16, 66, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(236, 72, 153, 0.2); border-radius: 24px; padding: 32px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 50px rgba(236, 72, 153, 0.15); text-align: center; position: relative; overflow: hidden; }
+        .jester-gem { width: 70px; height: 70px; background: linear-gradient(135deg, #f472b6 0%, #db2777 100%); margin: 0 auto; border-radius: 18px; box-shadow: 0 0 30px rgba(236, 72, 153, 0.6); display: flex; justify-content: center; align-items: center; font-size: 32px; animation: float 4s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+        h1 { font-size: 28px; font-weight: 800; margin: 12px 0 4px 0; background: linear-gradient(135deg, #fff 30%, #fbcfe8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .dev-badge { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #f472b6; font-weight: 700; margin-bottom: 24px; display: inline-block; background: rgba(236, 72, 153, 0.15); padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(236, 72, 153, 0.3); }
+        .nav-tabs { display: block; margin-bottom: 28px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 12px; }
+        .tab-link { text-decoration: none; color: #94a3b8; font-size: 13px; font-weight: 600; padding: 10px 14px; margin: 4px; border-radius: 12px; transition: all 0.3s ease; display: inline-block; }
+        .tab-link:hover { color: #f8fafc; background: rgba(255, 255, 255, 0.05); }
+        .tab-link.active { color: #111827; background: #f472b6; box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4); }
+        .page-content { text-align: left; line-height: 1.6; font-size: 14px; color: #cbd5e1; }
+        .page-title { font-size: 18px; color: #f8fafc; margin: 0 0 16px 0; font-weight: 700; text-align: center; border-bottom: 1px dashed rgba(236, 72, 153, 0.2); padding-bottom: 10px; }
+        .highlight-box { background: rgba(17, 24, 39, 0.5); border-left: 3px solid #f472b6; padding: 14px; border-radius: 0 12px 12px 0; margin: 18px 0; font-size: 13.5px; }
+        .btn-container { text-align: center; margin-top: 24px; }
+        .primary-action-btn { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: white; border: none; padding: 12px 28px; font-size: 14px; font-weight: 600; border-radius: 14px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3); display: inline-block; text-decoration: none; }
+        .primary-action-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5); }
+        .footer-note { margin-top: 32px; font-size: 11px; color: #475569; text-align: center; }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="marketing.html">Marketing</a>
-        <a href="support.html" class="active">Support</a>
-        <a href="privacy.html">Privacy</a>
-    </nav>
-    <div class="container">
-        <div class="card">
-            <h1>Need Help?</h1>
-            <p>If you have any questions or feedback regarding Jester Jewels, I'm here to listen.</p>
-            <a href="mailto:zahhar0btaras141@gmail.com" class="contact-btn">Email Taras Shtefko</a>
-            <p style="margin-top: 30px; opacity: 0.6;">zahhar0btaras141@gmail.com</p>
+<div class="container">
+    <div class="glass-card">
+        <div class="app-logo-area">
+            <div class="jester-gem">💎</div>
+            <h1>Jester Jewels</h1>
+            <div class="dev-badge">Support Desk</div>
         </div>
+        <div class="nav-tabs">
+            <a href="index.html" class="tab-link">Home / App</a>
+            <a href="privacy.html" class="tab-link">Privacy Policy</a>
+            <a href="marketing.html" class="tab-link">Marketing Info</a>
+            <a href="support.html" class="tab-link active">Support</a>
+        </div>
+        <div class="page-content">
+            <p class="page-title">Contact Helpdesk</p>
+            <p>Experienced a game crash, found a localization bug, or have custom optimization ideas for <strong>Jester Jewels</strong>? Get direct access to technical support channels without corporate delay.</p>
+            
+            <div class="highlight-box" style="text-align: center; border-left: none; border-top: 3px solid #f472b6;">
+                <strong>Direct Developer Assistance:</strong><br>
+                <a href="mailto:zahhar0btaras141@gmail.com" style="color:#f472b6; text-decoration:none; font-weight:700; font-size:16px;">zahhar0btaras141@gmail.com</a>
+            </div>
+            
+            <p>I verify all technical tickets and crash logs logs regularly, offering a prompt turnaround to address graphics issues, state compilation bugs, or system rendering glitches.</p>
+            
+            <div class="btn-container">
+                <a href="mailto:zahhar0btaras141@gmail.com" class="primary-action-btn">Compose Support Email</a>
+            </div>
+        </div>
+        <div class="footer-note">© 2026 Taras Shtefko. All rights reserved.</div>
     </div>
+</div>
 </body>
 </html>
