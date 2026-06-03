@@ -2,71 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Jester Jewels | Official Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jester Jewels - Official Space</title>
     <style>
-        :root {
-            --bg: #0f0a1e;
-            --card: rgba(255, 255, 255, 0.05);
-            --accent: #ffd700;
-            --text: #f0f0f5;
-            --safe-top: env(safe-area-inset-top);
-        }
+        *, *::before, *::after { box-sizing: border-box; }
         body {
-            margin: 0; font-family: 'Segoe UI', system-ui, sans-serif;
-            background: var(--bg); color: var(--text);
-            background-image: radial-gradient(circle at top right, #251a4a, #0f0a1e);
-            min-height: 100vh;
+            margin: 0; padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1b4b 0%, #311042 50%, #111827 100%);
+            color: #f8fafc; min-height: 100vh;
+            display: flex; justify-content: center; align-items: center; overflow-x: hidden;
         }
-        nav {
-            padding-top: max(20px, var(--safe-top));
-            padding-bottom: 15px;
-            display: flex; justify-content: center; gap: 10px;
-            background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(10px);
-            position: sticky; top: 0; z-index: 1000;
+        .container { width: 100%; max-width: 650px; padding: 24px; margin: 20px auto; }
+        .glass-card {
+            background: rgba(49, 16, 66, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(236, 72, 153, 0.2); border-radius: 24px; padding: 32px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 50px rgba(236, 72, 153, 0.15);
+            text-align: center; position: relative; overflow: hidden;
         }
-        nav a {
-            color: var(--text); text-decoration: none; font-size: 0.9rem;
-            padding: 8px 16px; border-radius: 20px; transition: 0.3s;
-            border: 1px solid rgba(255,215,0,0.2);
+        .jester-gem {
+            width: 70px; height: 70px; background: linear-gradient(135deg, #f472b6 0%, #db2777 100%);
+            margin: 0 auto; border-radius: 18px; box-shadow: 0 0 30px rgba(236, 72, 153, 0.6);
+            display: flex; justify-content: center; align-items: center; font-size: 32px;
+            animation: float 4s ease-in-out infinite;
         }
-        nav a:hover, nav a.active { background: var(--accent); color: #000; font-weight: bold; }
-        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-        .hero { text-align: center; margin-bottom: 40px; }
-        h1 { font-size: 2.8rem; color: var(--accent); text-shadow: 0 0 20px rgba(255,215,0,0.3); margin: 10px 0; }
-        .card {
-            background: var(--card); border: 1px solid rgba(255,255,255,0.1);
-            padding: 30px; border-radius: 24px; backdrop-filter: blur(12px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        @keyframes float { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-8px) rotate(8deg); } }
+        h1 {
+            font-size: 28px; font-weight: 800; margin: 12px 0 4px 0; letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff 30%, #fbcfe8 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .dev-info { margin-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); pt: 20px; }
-        .badge { display: inline-block; padding: 4px 12px; background: var(--accent); color: #000; border-radius: 12px; font-weight: bold; font-size: 0.8rem; }
-        footer { text-align: center; padding: 40px; opacity: 0.5; font-size: 0.8rem; }
+        .dev-badge {
+            font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #f472b6;
+            font-weight: 700; margin-bottom: 24px; display: inline-block;
+            background: rgba(236, 72, 153, 0.15); padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(236, 72, 153, 0.3);
+        }
+        .nav-tabs { display: block; margin-bottom: 28px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 12px; }
+        .tab-link {
+            text-decoration: none; color: #94a3b8; font-size: 13px; font-weight: 600;
+            padding: 10px 14px; margin: 4px; border-radius: 12px; transition: all 0.3s ease; display: inline-block;
+        }
+        .tab-link:hover { color: #f8fafc; background: rgba(255, 255, 255, 0.05); }
+        .tab-link.active { color: #111827; background: #f472b6; box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4); }
+        .page-content { text-align: left; line-height: 1.6; font-size: 14px; color: #cbd5e1; }
+        .page-title { font-size: 18px; color: #f8fafc; margin: 0 0 16px 0; font-weight: 700; text-align: center; border-bottom: 1px dashed rgba(236, 72, 153, 0.2); padding-bottom: 10px; }
+        .info-grid { display: block; margin: 20px 0; }
+        .info-row { display: table; width: 100%; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .info-label { display: table-cell; font-weight: 600; color: #94a3b8; width: 40%; }
+        .info-value { display: table-cell; color: #f8fafc; text-align: right; }
+        .footer-note { margin-top: 32px; font-size: 11px; color: #475569; text-align: center; }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="marketing.html">Marketing</a>
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy</a>
-    </nav>
-    <div class="container">
-        <div class="hero">
+<div class="container">
+    <div class="glass-card">
+        <div class="app-logo-area">
+            <div class="jester-gem">💎</div>
             <h1>Jester Jewels</h1>
-            <p>Sparkle, Strategy, and Royal Fun.</p>
+            <div class="dev-badge">Developer Portfolio Hub</div>
         </div>
-        <div class="card">
-            <h2>Welcome to the Kingdom</h2>
-            <p>Jester Jewels is a premium puzzle experience where every move shines. Crafted for players who seek quality and engagement.</p>
-            <div class="dev-info">
-                <span class="badge">Developer</span>
-                <h3>Taras Shtefko</h3>
-                <p>Dedicated to creating high-value mobile applications that bring joy and clear utility to users worldwide.</p>
-                <p><strong>Contact:</strong> zahhar0btaras141@gmail.com</p>
+        <div class="nav-tabs">
+            <a href="index.html" class="tab-link active">Home / App</a>
+            <a href="privacy.html" class="tab-link">Privacy Policy</a>
+            <a href="marketing.html" class="tab-link">Marketing Info</a>
+            <a href="support.html" class="tab-link">Support</a>
+        </div>
+        <div class="page-content">
+            <p class="page-title">Application Workspace</p>
+            <p>Welcome to the verified deployment hub for <strong>Jester Jewels</strong>. This independent environment outlines the technical integration, operational data paradigms, and contact endpoints for App Store модерации and ecosystem transparency.</p>
+            <div class="info-grid">
+                <div class="info-row">
+                    <div class="info-label">Application Name</div>
+                    <div class="info-value">Jester Jewels</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Lead Developer</div>
+                    <div class="info-value">Taras Shtefko</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Framework Scope</div>
+                    <div class="info-value">iOS Native Mobile Architecture</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Administrative Email</div>
+                    <div class="info-value" style="font-size: 12px;">zahhar0btaras141@gmail.com</div>
+                </div>
             </div>
+            <p style="text-align: center; font-size: 13px; color: #f472b6;">Use the central tabs above to access legal disclosures, technical support channels, and product roadmaps.</p>
         </div>
+        <div class="footer-note">© 2026 Taras Shtefko. All rights reserved.</div>
     </div>
-    <footer>&copy; 2024 Taras Shtefko. All rights reserved.</footer>
+</div>
 </body>
 </html>
